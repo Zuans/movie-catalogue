@@ -3,7 +3,7 @@ name: Continuous Integeration
 on:
   pull_request:
     branches:
-        -m main
+        - main
 
 jobs:
   test:
@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        use: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name : Run Automated Test
+      - name: Run Automated Test
         run: |
           npm install
           npm run test
